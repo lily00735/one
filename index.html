@@ -344,6 +344,9 @@
       openButton.addEventListener("click",
                                   function () {
                                     letter.classlist.add("show");
+                                    letter.style.display = "block";
+                                    letter.style.visibility = "visible";
+                                    letter.style.opacity = "1";
                                     openButton.textContent = A lettle love for you 💖;
                                     openButton.setAttribute("aria-expanded",
                                                             "true");
