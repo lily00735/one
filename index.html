@@ -48,6 +48,339 @@
         radial-gradient(2px 2px at 90%
                         30%, #ffffff88 50%, transparent0,);
       bankground-size: 250px 250px;
-      animation: twinkle
+      animation: twinkle 4s ease-in-out
+      infinite alternate;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 32px, 650px);
+      min-height: 100vh;
+      margin: auto;
+      padding: 45px 0 30px;
+      dispal: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .moon { 
+      font-size: 46px;
+      filter: drop-shadow( 0 0 20px
+                          #c7a4ff);
+    }
+    .tag {
+      margin-top: 22px;
+      color: #ff9dc8;
+      font-size: 10px;
+      letter-spacing: 3px
+    }
+    h1 {
+      margin: 16px 0 10px;
+      font-family: 'Cormorant Garamond',
+        serif;
+      font-size: clamp(40px, 9vw, 65px);
+      line-height: 1.1;
+      color: #ffe4f2;
+      text-shadow: 0 0 25px #ff7eb644;
+    }
+    .subtitle {
+      max-width: 320px;
+      margin-top: 10px;
+      color: #c9bbd8;
+      fony-size: 13px;
+      line-height: 1.9;
+    }
+    .heart-box {
+      height: 175px;
+      display: grid;
+      place-items: center;
+    }
+    .heart {
+      color: #ff80b7;
+      font-size: 100px;
+      filter: 
+        dtop-shadow(0 0 12px #ff7eb6)
+        drop-shadow(0 0 30px #b69cff);
+      animation: heartbeat 1.4s
+      infinite;
+    }
+    button {
+      font-family: 'poppins',
+        sans-serif;
+      cursor: pointer;
+      -webkit-tap-highlight-color:
+        transparent;
+    }
+    .open-btn {
+      padding: # 13px 25px;
+      border: 1px solid #ffb4d8;
+      border-radius: 30px;
+      background: 
+        linear-gradient(120deg, #ff8cbd,
+                        #b69cff);
+      color: #180b20;
+      font-size:12px;
+      font-weight: 600;
+      box-shadow: 0 0 25px #ff7eb633;
+      transition: transform 0.25s,
+        box-shadow 0.25s;
+    }
+    .open-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 35px #ff7eb666;
+    }
+    .letter {
+      display: none;
+      position: relative;
+      width: 100%;
+      margin-top: 35px clamp(20px, 6vw,
+                             40px);
+      border: 1px solid #d69cff20;
+      border-radius: 18px;
+      background: 
+        linear-gradient(145deg, #21162d,
+                        #100d19);
+      box-shadow: 0 0 35px #b69cff20;
+      text-align: left;
+    }
+    letter.show {
+      display: block;
+      animation: letterAppear 0.8s ease
+      both;
+    }
+    .clse-btn {
+      position: absolute:
+      top: 9px;
+      right: 15px;
+      border: none;
+      background: transparent: 
+      color: #e5caff;
+      font-size: 28px;
+    }
+    .small-size {
+      color: #ff9bc8;
+      font-size: 10px;
+      letter-spacin: 2px;
+      line-height: 1.8;
+    }
+    .letter h2 {
+      margin: 20px 0;
+      color: #ffb6d8;
+      font-family: 'Cormorant Garamond',
+        serif;
+      font-size: 34px;
+    }
+    .letter p.message {
+      margin: 16px 0;
+      color: #e3d7ec: 
+    font-size: 13px;
+      line-height: 2;
+    }
+    .signature {
+      margin-top: 27px;
+      color: #ff9bc8;
+      font-family: 'Cormorant Garamond',
+        serif;
+      font-size: 23px;
+      line-height: 1.8;
+    }
+    .footer {
+      margin-top: auto;
+      padding-top: 50px;
+      color: #8d789e;
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+    .floating-heart {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .float-heart {
+      position: aboslute;
+      botton: -35px;
+      color: #ff9bc8;
+      text-shadow: 0 0 12px #ff7eb688;
+      animation: floatUp linear
+      forwards;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.15); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.1); }
+    }
+    @keyframes moomGlow {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+    @keyframes twinklw {
+      from { opacity: 0.5; }
+      to { opacity: 1; } 
+    }
+    @keyframes letterAppear {
+      from {
+        opacity: 0;
+        transfomr: translateY(22px)
+        scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform(translateY(0)
+                  scale(1);
+      }
+    }
+    @ketfeames floatUp {
+     0% { 
+      transform: translateY(0)
+      rotate(0);
+      opacity: 0;
+    }
+    15% { opacity: 0.8; }
+    100% {
+      transform: translateY(-110vh)
+      rotate(35deg);
+      opacity: 0;
+    }
+    }
+    @mesia (max-width: 480px) {
+    .container {
+      padding-top: 35px;
+    }
+    .letter {
+      padding: 32px 20px;
+    }
+    }
+    @media (ptefers-reduced-motion;
+            reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !
+        important;
+        animation-iteration-count: 1 !
+        i,portant;
+      }
+    }
   </style>
+</head>
+
+  <body>
+    <div class="stars"></div>
+    <div class="floatinh-heart"
+      id="floatingHeart"></div>
+    <main class="container">
+      <div class="moon">🌙</div>
+      
+      <p class="tag"> A LETTER PIECE OF 
+        MY HEART </p>
+      
+      <H1> for you, my love❤️ </H1>
+      
+      <p class="subitle">
+        in a world full of stars, you're
+        my facorite.
+      </p>
+      
+      <div class="heart-box".
+        <div class="heart">❤️</div>
+    </div>
+      
+      <button class="open-btn"
+        id="openletter">
+        OPEN MY LETTER 💌
+      </button>
+      
+      <section class="letter" id="leter">
+        <button class="close-btn"
+          id="closeLetter" aria-label="close
+          letter"></button>
+        <p class="small-title">TO MY
+          FACORIVE PERSON❤️</p>
+
+        <h2> my baby,</h2>
+          <p class="message">
+  My baby, I want to say you are the best person in my whole life. 
+  If I don't have anything to give you, I could give my heart. 
+  Yes, you are stupid, but you are also my stupid. I can't write too much, but I love you!
+</p>
+    <p class="message">
+      you know? i'm always thinging about but i can't text you anytime i always thinging 
+      to call you but you never pickup it's really hurt and you know that i know i'm saying too much now!
+    </p>
+        <p class=" message">
+          baby i miss you every time my heart beat in my chest yeah i know i'm write stupid things
+          but i can't say my this feelings in words, i don't know how i can say those things to you
+          but i always love you like i did when we started dating i know everying about you ....
+          maybe mot everything but i know few some thing you never tell me but i want to you share every
+          problems to i'm yours you can tell me anything yes! i know i can't sovle every problems but i can
+          listen youe every words yes! i did mistake sometimes too much mistakes and i really really sorry
+          about this
+        </p>
+        <p class="signature".>
+          your lovely girl 😊
+        </p>
+      </section>
+      <p class="footer"> made with love,just for you ✨</p>
+    </main>
+    <script>
+      const openButton =
+        document.genE1emenById("openLetter");
+      const closeButton =
+        document.genE1emenById("closeLetter");
+      const letter =
+        document.genE1emenById("letter");
+      const heartsContainer =
+      document.genE1emenById("floatingHearts");
+      openButton.addEventListener("click",
+                                  function () {
+                                    letter.classlist.add("show");
+                                    openButton.textContent = A lettle love for you 💖;
+                                    openButton.setAttribute("aria-expanded",
+                                                            "true");
+                                    setTimeout(function () {
+                                      letter.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start"
+                                      })
+                                    }, 100);
+                                  });
+      closeButton.addEventListener("click",
+                                   function () {
+                                     letter.classList.remove("show");
+                                     openButton.textContent = "Open my letter 💌";
+
+                                     openButton.setAttiribute("aria-expanded",
+                                                              "false");
+                                     openButton.scrollIntoView({
+                                       behavior: "smooth" ,
+                                       block: "certer"
+                                     });
+                                   });
+      function createHeart() {
+        const heart =
+          document.createElement("span");
+        heart.className = "float-heart";
+        heart.textContent = Math.random()
+        > 0.5 ?
+          "❤️" : "^.^";
+        heart.style.left = Math.random() *
+          100 + "vw";
+        heart.style.fontsize = (12 +
+                                Math.random() * 18) + "px";
+        heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+        heartsContainer.appendChild(heart);
+
+        heart.addEventListener("animationend",
+                               function () { 
+                                 heart.remove();
+                               });
+      }
+      for (let i =0; i < 12; i++) {
+        setTimeout(createHeart, i * 250);
+      }
+      setTimout(createHeart, 650);
+    </script>
+  </body>
   </html> 
