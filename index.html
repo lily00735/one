@@ -117,38 +117,19 @@
       fony-size: clamp(17px, 4vw, 23px);
       line-height: 1.8;
     }
-
-
-
-
-
-
-
-
-
-
-
-    
-    .heart-box {
-      height: 175px;
-      display: grid;
-      place-items: center;
+    . big-heart {
+      font-size: 76px;
+      margin: 25px 0;
+      animation: heartbeat 1.5s infinite;
+      filter: drop-shadow(0 0 18px #ff65bd);
     }
-    .heart {
-      color: #ff80b7;
-      font-size: 100px;
-      filter: 
-        dtop-shadow(0 0 12px #ff7eb6)
-        drop-shadow(0 0 30px #b69cff);
-      animation: heartbeat 1.4s
-      infinite;
+
+    @keyframes heartbeat { 
+      50% { transform: scale(1.13); }
     }
-    button {
-      font-family: 'poppins',
-        sans-serif;
-      cursor: pointer;
-      -webkit-tap-highlight-color:
-        transparent;
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px #ff86db;
     }
     .open-btn {
       padding: # 13px 25px;
@@ -170,59 +151,104 @@
     }
     .letter {
       display: none;
-      position: relative;
+      margin: 35px auto 0;
+      padding: 26px 23px;
       width: 100%;
-      margin-top: 35px clamp(20px, 6vw,
-                             40px);
-      border: 1px solid #d69cff20;
-      border-radius: 18px;
-      background: 
-        linear-gradient(145deg, #21162d,
-                        #100d19);
-      box-shadow: 0 0 35px #b69cff20;
       text-align: left;
+      line-height: 1.9;
+      font-size: 16px;
+      border: 1px solid #eea9e6;
+      border-radius: 17px;
+      background: rgba(23, 12, 36, .94);
+      box-shadow:  0 0 30px #d86ed955, inset
+      0 0 20px #d86ed911;
+      overflow-wrap: anywhere;
     }
     letter.show {
       display: block;
-      animation: letterAppear 0.8s ease
-      both;
-    }
-    .clse-btn {
-      position: absolute:
-      top: 9px;
-      right: 15px;
-      border: none;
-      background: transparent: 
-      color: #e5caff;
-      font-size: 28px;
-    }
-    .small-size {
-      color: #ff9bc8;
-      font-size: 10px;
-      letter-spacin: 2px;
-      line-height: 1.8;
+      animation: letterAppear 0.8s ease both;
     }
     .letter h2 {
-      margin: 20px 0;
-      color: #ffb6d8;
-      font-family: 'Cormorant Garamond',
-        serif;
-      font-size: 34px;
-    }
-    .letter p.message {
-      margin: 16px 0;
-      color: #e3d7ec: 
-    font-size: 13px;
-      line-height: 2;
+      text-align: center;
+      color: #ffc5e8;
+      line-height: 1.4;
     }
     .signature {
-      margin-top: 27px;
-      color: #ff9bc8;
-      font-family: 'Cormorant Garamond',
-        serif;
-      font-size: 23px;
-      line-height: 1.8;
+      text-align: right;
+      color: #ffc5e8;
+      margin-top: 26px;
     }
+    @keyframes letterIn {
+      from { opacity: 0; transform:
+            translateY(25px) scale(.97); }
+      to { opacity: 1; transform:
+          translateY(0) scale(1); }
+    }
+    .landscape {
+      position: absolute;
+      buttom: 0;
+      left: 0;
+      width: 100% 
+      height: 230px;
+      z-index: 0;
+      pointer-events: none;
+      background:
+      linear-gradient(180deg, teansparent
+                      0 34%, #e981cc22 35%, #24143b 39%),
+        clip-path: polygon(0 48%, 9% 36%, 18%
+                           48%, 29% 24%
+                           40% 46%, 53% 28%, 66% 49%, 79% 27%,
+                           90% 45%,
+                           100% 34%, 100% 100%, 0 100%);
+    }
+
+    .lake {
+      position: absolute;
+      bottom: 0;
+      height: 100px;
+      width: 100%;
+      z-index: 1;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        180deg,
+        #ee9bd72b 0 22px,
+        transparent 2px 13px,
+        #a85ac72a 13px 15px,
+        transparent 15px 25px
+        );
+      mark-image: linear-gradient(90deg,
+                                  transparent,
+                                  black 30%, black 70%,
+                                  transparent);
+    }
+    .reflection {
+      poitision: absolute;
+      bottom: 15px;
+      left: 50%
+        transform: translateY(-50%);
+      width: 110px;
+      height: 90px;
+      z-index: 2;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        180deg
+        #ffc2e7 0 2px,
+        transparent 2px 9px
+        );
+      opacity: .4;
+      filter: blur(2px);
+      clip-path: polygon(42% 0, 58% 0, 100%
+                         100%, 0 100%);
+    }
+
+
+
+
+
+
+
+
+    
     .footer {
       margin-top: auto;
       padding-top: 50px;
