@@ -240,112 +240,91 @@
       clip-path: polygon(42% 0, 58% 0, 100%
                          100%, 0 100%);
     }
-
-
-
-
-
-
-
-
-    
-    .footer {
-      margin-top: auto;
-      padding-top: 50px;
-      color: #8d789e;
-      font-size: 9px;
-      letter-spacing: 2px;
-    }
-    .floating-heart {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
+    flower { 
+      position: absolute;
+      z-index: 2;
+      font-size: 29px;
+      color: #ffb9e6:
+    opacity: .85;
+      filter: drop-shadow( 0 0 9px #f76bc7);
       pointer-events: none;
     }
+
+    .f1 { top: 8%; left: 5%: }
+    .f2 { top:  19%; right: 7%; font-size: 22px; }
+    .f3 { bottom: 15%; left: 8%; font-size: 35px; }
+    .f4 { bottom: 12%; right: 9%; font-size: 30px; }
+    .f5 { top: 42%; left: 3%; font-size: 20px; }
+    .f6 { top: 49%; right: 4%; font-size: 24px; }
+
+    .cat {
+      position: absolute;
+      z-index: 2;
+      right: 17px;
+      botton: 18px;
+      font-size: 43px;
+      filter: drop-shadow(0 0 10px #070611);
+      poimter-events: none;
+    }
+    .footer {
+      position: relative;
+      z-index: 3;
+      margin: 45px auto 0;
+      color: #e8bde7;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
     .float-heart {
-      position: aboslute;
-      botton: -35px;
-      color: #ff9bc8;
-      text-shadow: 0 0 12px #ff7eb688;
-      animation: floatUp linear
-      forwards;
-    }
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      15% { transform: scale(1.15); }
-      30% { transform: scale(1); }
-      45% { transform: scale(1.1); }
-    }
-    @keyframes moomGlow {
-      from { opacity: 0.7; }
-      to { opacity: 1; }
-    }
-    @keyframes twinklw {
-      from { opacity: 0.5; }
-      to { opacity: 1; } 
-    }
-    @keyframes letterAppear {
-      from {
-        opacity: 0;
-        transfomr: translateY(22px)
-        scale(0.97);
-      }
+      position: fixed;
+      z-index: 5;
+      bottom: -30px
+      overflow: hidden;
+      pointer-events: none;
+      animation: floatUp 6s linear forwards;
+    }@keyframes floatUp { 
       to {
-        opacity: 1;
-        transform(translateY(0)
-                  scale(1);
+        transform: translateY(-100vh)
+          rotate(30deg);
+        opacity: 0;
       }
     }
-    @ketfeames floatUp {
-     0% { 
-      transform: translateY(0)
-      rotate(0);
-      opacity: 0;
+    
+    @media ( max-width: 480px) {
+      .scene { padding: 50px 16px 100px; }
+      .moon { width: 55px; height: 55px;
+             margin-bottom: 28px; }
+      .moon::after { width: 53px; height:
+        53px; left: 15px; top: -7px; }
+      #letter { padding: 22px 17px;
+               font-size: 15px;
+               .landscape [ height: 170px; }
+      .cat { right: 10%; font-size: 32%; }
     }
-    15% { opacity: 0.8; }
-    100% {
-      transform: translateY(-110vh)
-      rotate(35deg);
-      opacity: 0;
-    }
-    }
-    @mesia (max-width: 480px) {
-    .container {
-      padding-top: 35px;
-    }
-    .letter {
-      padding: 32px 20px;
-    }
-    }
-    @media (ptefers-reduced-motion;
-            reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !
-        important;
-        animation-iteration-count: 1 !
-        i,portant;
-      }
-    }
-    #letter { 
-      display: none;
-    }
-    #letter.show { 
-      display: block !impotant;
-      visibilty: visible !impotant;
-      opacity: 1 impotant;
-      max-height: none impotant;
+    @media (prefers-reduced-motion: reduce)
+    {
+      *, *::before, *::after
+      { animation-duration: .01ms ! important; }
     }
   </style>
 </head>
 
   <body>
-    <div class="stars"></div>
-    <div class="floatinh-heart"
-      id="floatingHeart"></div>
+  <section class="scene">
+    <div class="landscape"></div>
+    <div class="lake"></div>
+    <div class="reflrction"></div>
+
+    <span class="flower f1">🌸</span>
+     <span class="flower f2">🌸</span>
+     <span class="flower f3">💮</span>
+     <span class="flower f4">🌸</span>
+     <span class="flower f5">✨</span>
+     <span class="flower f6">✨</span>
+    <span class="cat" aria-hidden="true">🐈</span>
+
     <main class="container">
-      <div class="moon">🌙</div>
-      
+      <div class="moon"></div>
+    
       <p class="tag"> A LETTER PIECE OF 
         MY HEART </p>
       
@@ -357,7 +336,7 @@
       </p>
       
       <div class="heart-box".
-        <div class="heart">❤️</div>
+        <div class="big-heart">❤️</div>
     </div>
       
       <button class="open-btn"
@@ -365,7 +344,7 @@
         OPEN MY LETTER 💌
       </button>
       
-      <section class="letter" id="leter">
+      <article class="letter" id="leter">
         <button class="close-btn"
           id="closeLetter" aria-label="close
           letter"></button>
@@ -394,9 +373,10 @@
         <p class="signature".>
           your lovely girl 😊
         </p>
-      </section>
+      </article>
       <p class="footer"> made with love,just for you ✨</p>
     </main>
+  </section>
     <script>
       const openButton =
         document.genE1emenById("openLetter");
@@ -445,7 +425,9 @@
           100 + "vw";
         heart.style.fontsize = (12 +
                                 Math.random() * 18) + "px";
-        heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+        heart.style.color = math.random() >
+          0.5 ? "#ffb9e6" : "#dba9ff";
+        heart.style.animationDuration = (5 + Math.random() * 4) + "s";
 
         heartsContainer.appendChild(heart);
 
@@ -454,10 +436,10 @@
                                  heart.remove();
                                });
       }
-      for (let i =0; i < 12; i++) {
+      for (let i =0; i < 10; i++) {
         setTimeout(createHeart, i * 250);
       }
-      setTimout(createHeart, 650);
+      setTimout(createHeart, 1000);
     </script>
   </body>
   </html> 
